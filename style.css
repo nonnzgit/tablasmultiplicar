@@ -3,4 +3,93 @@ body {
   color: whitesmoke;
   display: flex;
   justify-content: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.title {
+  text-decoration: underline;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#correcto {
+  color: rgb(44, 187, 44);
+  display: none;
+  text-align: center;
+  font-size: 2rem;
+}
+
+#incorrecto {
+  color: rgb(230, 222, 117);
+  display: none;
+  text-align: center;
+  font-size: 2rem;
+}
+
+#correcto[data-active='true'] {
+  display: block;
+}
+
+#incorrecto[data-active='true'] {
+  display: block;
+}
+
+#question {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+  margin: 1rem;
+}
+
+#answer {
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+#answer > input {
+  width: 5rem;
+  font-size: 2rem;
+  margin-right: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  text-align: right;
+}
+
+#btnValidar,
+#comenzar {
+  padding: 0.5rem 1.3rem;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-transform: uppercase;
+  background-color: rgb(25, 84, 151);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  height: 43px;
+}
+
+#btnValidar:hover,
+#comenzar:hover {
+  background-color: rgb(157, 178, 202);
+  color: black;
+}
+
+#btnValidar:active,
+#comenzar:active {
+  background-color: rgb(229, 232, 235);
+  color: black;
+}
+
+.operacion {
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }

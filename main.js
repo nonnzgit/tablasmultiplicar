@@ -48,11 +48,21 @@ function numDB() {
   return { num1, num2, str: `${num1} X ${num2} = ` };
 }
 
+function incorrectoOff() {
+  setTimeout(incorrecto.setAttribute('data-active', 'false'), 1000);
+}
+
 function validar(num1, num2) {
   const inputValue = document.getElementById('resultInput');
   console.log(inputValue.value);
+  const correcto = document.getElementById('correcto');
+  const incorrecto = document.getElementById('incorrecto');
   if (num1 * num2 === Number(inputValue.value)) {
-    console.log('CORRECTO');
+    correcto.setAttribute('data-active', 'true');
+    setTimeout(comenzar, 1000);
+  } else {
+    incorrecto.setAttribute('data-active', 'true');
+    setTimeout(incorrectoOff, 1000);
   }
 }
 
@@ -67,6 +77,13 @@ function comenzar() {
   const resultInput = document.createElement('input');
   resultInput.type = 'number';
   resultInput.id = 'resultInput';
+  resultInput.min = 0;
+  resultInput.max = 100;
+  resultInput.setAttribute('autofocus', true);
+  resultInput.addEventListener('keyup', e => {
+    let keycode = e.keyCode || e.which;
+    if (keycode == 13) validar(num1, num2);
+  });
   answer.appendChild(resultInput);
 
   posibleDiv2 = document.getElementById('btnValidar');
@@ -76,5 +93,9 @@ function comenzar() {
   btnValidar.id = 'btnValidar';
   btnValidar.setAttribute('onclick', `validar(${num1}, ${num2})`);
   answer.appendChild(btnValidar);
-  console.log(answer);
+
+  posibleDiv3 = document.getElementById('comenzar');
+  if (posibleDiv3) posibleDiv3.remove();
+
+  setTimeout(correcto.setAttribute('data-active', 'false'), 1000);
 }
