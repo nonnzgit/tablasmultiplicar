@@ -1,18 +1,3 @@
-/* 
-1. Comprueba si hay contenido en div #question y en div #answer y lo borra.
-2. Ejecutar funcion que de un número aleatorio y lo guarde en una variable num1
-3. Ejecutar funcion que de un número aleatorio y lo guarde en una variable num2
-4. Crear elemento p
-5. Crear nodo de texto y rellenarlo con num1
-6. Ponerlo dentro de div #question seguido de espacio y X
-7. Crear elemento p
-8. Crear nodo de texto y rellenarlo con num1
-9. Ponerlo dentro de div #question seguido de espacio y =
-10. Crear input
-11. Crear botón para validar respuesta, que guarde el input en una variable y compruebe si el valor del input es igual a la multiplicación de num1 y num2
-12. Si es correcto, dibujar un check y si no es correcto una cruz.
-*/
-
 const data = [
   [3, 8],
   [6, 7],
@@ -54,7 +39,6 @@ function incorrectoOff() {
 
 function validar(num1, num2) {
   const inputValue = document.getElementById('resultInput');
-  console.log(inputValue.value);
   const correcto = document.getElementById('correcto');
   const incorrecto = document.getElementById('incorrecto');
   if (num1 * num2 === Number(inputValue.value)) {
